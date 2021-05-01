@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./modules/style.css">
+</head>
+<body>
+    <!-- <button id="bt1">get Player</button> -->
+    <div id="container">
+        <div id="redwin">!!!CZERWONY WYGRAŁ!!!</div>
+        <div id="greenwin">!!!ZIELONY WYGRAŁ!!!</div>
+        <div id="bluewin">!!!NIEBIESKI WYGRAŁ!!!</div>
+        <div id="yellowwin">!!!ŻÓŁTY WYGRAŁ!!!</div>
+        <div id="header">
+            <div id="board_number"></div>
+            <div id="gracz"></div>
+        </div>
+        <div id="left">
+            <!-- <button id="bt2">wygrana</button> -->
+            <div id="bt3" class="style-1">not ready</div>
+            <div id="bt4">rzut</div>
+            <div id="gracze">
+                <div id="red">red</div>
+                <div id="green">green</div>
+                <div id="blue">blue</div>
+                <div id="yellow">yellow</div>
+            </div>
+        </div>
+        <div id="gra">
+            <div id="plansza">
+                <div id="red1" class='rpion'>r1</div>
+                <div id="red2" class='rpion'>r2</div>
+                <div id="red3" class='rpion'>r3</div>
+                <div id="red4" class='rpion'>r4</div>
+
+                <div id="green1" class='gpion'>g1</div>
+                <div id="green2" class='gpion'>g2</div>
+                <div id="green3" class='gpion'>g3</div>
+                <div id="green4" class='gpion'>g4</div>
+
+                <div id="blue1" class='bpion'>b1</div>
+                <div id="blue2" class='bpion'>b2</div>
+                <div id="blue3" class='bpion'>b3</div>
+                <div id="blue4" class='bpion'>b4</div>
+
+                <div id="yellow1" class='ypion'>y1</div>
+                <div id="yellow2" class='ypion'>y2</div>
+                <div id="yellow3" class='ypion'>y3</div>
+                <div id="yellow4" class='ypion'>y4</div>
+            </div>
+        </div>
+        <div id="kostka"></div>
+    </div>
+
+    <script type="module">
+        //importy
+        import Num from './modules/getNum.js';
+        import Pos from './modules/getPos.js';
+        import Ready from './modules/getReady.js';
+        import ReadyOrNot from './modules/readyOrNot.js';
+        import Ruch from './modules/ruch.js';
+        import Pola from './modules/pola.js';
+        import Bazy from './modules/bazy.js';
+        import Wygrana from './modules/wygrana.js'
+
+        //stworzenie planszy
+            let newpola = new Pola()
+            newpola.pola
+            let newbazy = new Bazy()
+            newbazy.bazy
+        //przydzielenie gracza do planszy
+
+            let newnum = new Num()
+            newnum.num
+
+        // document.getElementById("bt2").onclick = function () {
+        //     // odczytanie pozycji wszystkich graczy
+        //     let wygr = new Wygrana('red')
+        //     wygr.wygrana
+        // }
+        var pozycje = setInterval(function(){let newpos = new Pos();newpos.pos},1000)
+        
+        document.getElementById("bt3").onclick = function () {
+            // ready / not ready
+            let newready = new Ready();
+            newready.ready
+
+            let newreadyOrNot = new ReadyOrNot();
+            newreadyOrNot.readyOrNot
+        }
+
+
+        document.getElementById("bt4").onclick = function () {
+            // odczytanie pozycji wszystkich graczy
+        let newruch = new Ruch()
+            newruch.ruch
+        }
+        
+        // let el = document.createElement('div');
+        // el.setAttribute('class','pioneczek')
+        // document.getElementById('plansza').appendChild(el)
+    </script>
+</body>
+</html>
