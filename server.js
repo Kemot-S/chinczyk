@@ -4,7 +4,8 @@
 // import getPos from "../modules/getPos.js"
 // import Gracz from "./modules/gracz.js"
 //stałe
-const PORT = 3000;
+// const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const http = require('http');
 const fs = require('fs');
 const qs = require('querystring');
